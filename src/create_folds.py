@@ -19,4 +19,4 @@ if __name__ == "__main__":
         df.loc[val_, "kfold"] = fold
 
     print(df.kfold.value_counts())
-    df.to_csv("../input/train_folds.csv, index=False")
+    df.to_csv("../input/train_folds.csv", index=False)

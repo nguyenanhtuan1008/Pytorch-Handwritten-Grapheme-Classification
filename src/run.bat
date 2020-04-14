@@ -1,0 +1,29 @@
+set CUDA_VISIBLE_DEVICES=0
+set IMG_HEIGHT=137
+set IMG_WIDTH=236
+set EPOCHS=50
+set TRAIN_BATCH_SIZE=64
+set TEST_BATCH_SIZE=8
+set MODEL_MEAN=(0.485, 0.456, 0.406)
+set MODEL_STD=(0.229, 0.224, 0.225)
+set BASE_MODEL=resnet34
+
+set TRAINING_FOLDS=[0, 1, 2, 3]
+set VALIDATION_FOLDS=[4]
+python train.py
+
+set TRAINING_FOLDS=[0, 1, 2, 4]
+set VALIDATION_FOLDS=[3]
+python train.py
+
+set TRAINING_FOLDS=[0, 1, 4, 3]
+set VALIDATION_FOLDS=[2]
+python train.py
+
+set TRAINING_FOLDS=[0, 4, 2, 3]
+set VALIDATION_FOLDS=[1]
+python train.py
+
+set TRAINING_FOLDS=[4, 1, 4, 3]
+set VALIDATION_FOLDS=[0]
+python train.py
